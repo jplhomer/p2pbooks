@@ -5,16 +5,70 @@ var P2PBOOKS = {
   toggleModal: function() {
     $(".modal-container").fadeToggle("fast");
   },
+
+  initGoogleLookup: function() {
+    $( "#add-book" ).autocomplete({
+      source: function( request, response ) {
+        $.ajax({
+          url: "https://www.googleapis.com/books/v1/volumes?",
+          dataType: "jsonp",
+          data: {
+            q: request.term
+          },
+          success: function( data ) {
+              response( 
+                $.map( data.items, function( item ) {
+                  return {
+                      label: item.volumeInfo.title,
+                      value: item.volumeInfo.title
+                  }
+              }));
+          },
+          error: function( data ) {
+            alert("Error! " + data);
+          }
+      });
+    },
+    minLength: 2,
+    select: function( event, ui ) {
+        log( ui.item ?
+            "Selected: " + ui.item.label :
+            "Nothing selected, input was " + this.value);
+    },
+    open: function() {
+        $( this ).removeClass( "ui-corner-all" ).addClass( "ui-corner-top" );
+    },
+    close: function() {
+        $( this ).removeClass( "ui-corner-top" ).addClass( "ui-corner-all" );
+    }
+  });
+  },
   
   // Initializers
   common: {
     init: function() { 
       $(".book").click(function() {
         P2PBOOKS.toggleModal();
-      })
+      });
+
       $(".close").click(function() {
         P2PBOOKS.toggleModal();
+      });
+
+      $(".modal-container").click(function() {
+        P2PBOOKS.toggleModal();
       })
+
+      $(".modal").click(function(e) {
+        e.stopPropagation();
+      });
+
+      P2PBOOKS.initGoogleLookup();
+
+      $(document).keyup(function(e) {
+        if (e.keyCode == 27) { P2PBOOKS.toggleModal(); }
+      });
+
     },
     finalize: function() {
       

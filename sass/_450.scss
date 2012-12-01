@@ -7,5 +7,14 @@
 		margin: 0 10px 10px 0;
 		@include border-radius(5px);
 		@include box-shadow(1px 1px 1px #cccccc);
+		text-align: left;
+
+		.author {
+			float: left;
+		}
+
+		.price {
+			float: right;
+		}
 	}
 }

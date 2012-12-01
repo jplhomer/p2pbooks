@@ -700,25 +700,27 @@ img {
   cursor: pointer;
   display: block;
   width: 100%;
+  font-size: 12px;
   text-align: center;
 }
-/* line 133, ../sass/_smallest.scss */
+/* line 134, ../sass/_smallest.scss */
 .cover-layout a.book:hover {
   background: #efefef;
 }
-/* line 137, ../sass/_smallest.scss */
-.cover-layout a.book h3 {
+/* line 138, ../sass/_smallest.scss */
+.cover-layout a.book h3.title {
   font-size: 14px;
   margin: 0;
 }
-/* line 142, ../sass/_smallest.scss */
-.cover-layout a.book p {
-  font-size: 12px;
-  margin: 0;
+/* line 143, ../sass/_smallest.scss */
+.cover-layout a.book .price {
+  font-weight: bold;
+  font-size: 30px;
+  text-shadow: -1px 0 0 #efefef;
 }
 
 /* FOOTER */
-/* line 151, ../sass/_smallest.scss */
+/* line 153, ../sass/_smallest.scss */
 footer.bottom {
   *zoom: 1;
   text-align: center;
@@ -736,12 +738,12 @@ footer.bottom:before, footer.bottom:after {
 footer.bottom:after {
   clear: both;
 }
-/* line 158, ../sass/_smallest.scss */
+/* line 160, ../sass/_smallest.scss */
 footer.bottom a {
   color: #666666;
 }
 
-/* line 164, ../sass/_smallest.scss */
+/* line 166, ../sass/_smallest.scss */
 .modal-container {
   display: none;
   position: fixed;
@@ -752,7 +754,7 @@ footer.bottom a {
   z-index: 9;
   background: rgba(0, 0, 9, 0.7);
 }
-/* line 174, ../sass/_smallest.scss */
+/* line 176, ../sass/_smallest.scss */
 .modal-container .modal {
   margin: 20px auto;
   padding: 20px;
@@ -764,19 +766,19 @@ footer.bottom a {
   -moz-border-radius: 5px;
   border-radius: 5px;
 }
-/* line 183, ../sass/_smallest.scss */
+/* line 185, ../sass/_smallest.scss */
 .modal-container .modal h2 {
   margin: 0 0 5px;
   font-size: 20px;
 }
-/* line 189, ../sass/_smallest.scss */
+/* line 191, ../sass/_smallest.scss */
 .modal-container .close {
   float: right;
   margin: 5px 5px 0 0;
 }
 
 /* BUTTON */
-/* line 198, ../sass/_smallest.scss */
+/* line 200, ../sass/_smallest.scss */
 .btn, a:visited.btn, button {
   display: inline-block;
   text-decoration: none;
@@ -794,12 +796,12 @@ footer.bottom a {
   box-shadow: 1px 1px 1px #cccccc;
   cursor: pointer;
 }
-/* line 209, ../sass/_smallest.scss */
+/* line 211, ../sass/_smallest.scss */
 .btn:hover, .btn:focus, a:visited.btn:hover, a:visited.btn:focus, button:hover, button:focus {
   background: #cccccc;
   color: #033063;
 }
-/* line 214, ../sass/_smallest.scss */
+/* line 216, ../sass/_smallest.scss */
 .btn.close, a:visited.btn.close, button.close {
   color: #cccccc;
   text-shadow: 1px 0 0 #efefef;
@@ -818,7 +820,7 @@ footer.bottom a {
   border-radius: 3px;
   line-height: 1;
 }
-/* line 223, ../sass/_smallest.scss */
+/* line 225, ../sass/_smallest.scss */
 .btn.close:hover, .btn.close:focus, a:visited.btn.close:hover, a:visited.btn.close:focus, button.close:hover, button.close:focus {
   background: #dddddd;
 }
@@ -836,6 +838,15 @@ footer.bottom a {
     -webkit-box-shadow: 1px 1px 1px #cccccc;
     -moz-box-shadow: 1px 1px 1px #cccccc;
     box-shadow: 1px 1px 1px #cccccc;
+    text-align: left;
+  }
+  /* line 12, ../sass/_450.scss */
+  .cover-layout a.book .author {
+    float: left;
+  }
+  /* line 16, ../sass/_450.scss */
+  .cover-layout a.book .price {
+    float: right;
   }
 }
 @media (min-width: 550px) {
@@ -951,6 +962,12 @@ footer.bottom a {
     float: left;
   }
 }
+@media (min-width: 700px) {
+  /* line 2, ../sass/_700.scss */
+  .modal-container .modal {
+    width: 600px;
+  }
+}
 @media (min-width: 940px) {
   /* line 1, ../sass/_940.scss */
   .wrapper {
@@ -971,6 +988,11 @@ footer.bottom a {
   /* line 23, ../sass/_940.scss */
   .cover-layout {
     margin: 20px 0;
+  }
+
+  /* line 28, ../sass/_940.scss */
+  .modal-container .modal {
+    width: 740px;
   }
 }
 /* @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (min-device-pixel-ratio: 1.5) {

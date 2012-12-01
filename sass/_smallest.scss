@@ -128,20 +128,22 @@ img {
     cursor: pointer;
     display: block;
     width: 100%;
+    font-size: 12px;
     text-align: center;
 
     &:hover {
       background: #efefef;
     }
 
-    h3 {
+    h3.title {
       font-size: 14px;
       margin: 0;
     }
 
-    p {
-      font-size: 12px;
-      margin: 0;
+    .price {
+      font-weight: bold;
+      font-size: 30px;
+      text-shadow: -1px 0 0 #efefef;
     }
   }
 }
