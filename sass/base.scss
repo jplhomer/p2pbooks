@@ -12,6 +12,10 @@
 	@import "450";
 }
 
+@media (min-width: 550px){
+	@import "550";
+}
+
 @media (min-width: 700px){
 	@import "700";
 }

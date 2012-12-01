@@ -1,0 +1,91 @@
+header.top {
+	position: relative;
+	height: 100px;
+	@include clearfix();
+
+	.brand {
+		position: absolute;
+		left: 50%;
+		top: 10px;
+		margin-left: -100px;
+
+
+		a {
+			display: block;
+			width: 200px;
+		}
+	}
+
+	.search {
+		float: left;
+		text-align: left;
+
+		input {
+			width: 200px;
+			margin: 20px 0 0;
+			@include border-radius(0);
+		}
+	}
+
+	nav.main {
+		float: right;
+		text-align: right;
+		margin-top: 20px;
+
+		ul {
+			li {
+				float: left;
+
+				a {
+					width: auto;
+					@include border-radius(0);
+					margin: 0 5px 0 0;
+					padding: 5px 10px;
+
+					.caret {
+						display: inline;
+						font-size: 10px;
+					}
+				}
+
+				&:hover ul {
+					display: block;
+					position: absolute;
+
+					li {
+						float: none;
+
+						a {
+							width: 100%;
+							background: #cccccc;
+
+							&:hover {
+								background: #efefef;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.modal-container {
+	.modal {
+		@include clearfix();
+		
+		width: 550px;
+		height: auto;
+
+		.image {
+			width: 45%;
+			float: left;
+			margin-right: 5%;
+		}
+
+		.info {
+			width: 50%;
+			float: left;
+		}
+	}
+}

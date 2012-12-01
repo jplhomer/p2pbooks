@@ -1,15 +1,20 @@
 // When you change APPName, be sure to update it in mylibs/util.js
 // @see http://paulirish.com/2009/markup-based-unobtrusive-comprehensive-dom-ready-execution/
-var APPNAME = {
+var P2PBOOKS = {
   
-  methodName: function() {
-    
+  toggleModal: function() {
+    $(".modal-container").fadeToggle("fast");
   },
   
   // Initializers
   common: {
     init: function() { 
-      
+      $(".book").click(function() {
+        P2PBOOKS.toggleModal();
+      })
+      $(".close").click(function() {
+        P2PBOOKS.toggleModal();
+      })
     },
     finalize: function() {
       
@@ -28,7 +33,7 @@ var APPNAME = {
 
 UTIL = {
   fire: function( func,funcname, args ) {
-    var namespace = APPNAME;  // indicate your obj literal namespace here
+    var namespace = P2PBOOKS;  // indicate your obj literal namespace here
  
     funcname = ( funcname === undefined ) ? 'init' : funcname;
     if ( func !== '' && namespace[ func ] && typeof namespace[ func ][ funcname ] == 'function' ) {

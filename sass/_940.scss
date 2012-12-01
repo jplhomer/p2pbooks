@@ -1,1 +1,25 @@
+.wrapper {
+	padding: 0;
+	width: 940px;
+	margin: 0 auto;
+}
 
+header.top {
+	.brand {
+
+	}
+
+	.search {
+		input {
+			margin-top: 30px;	
+		}
+	}
+
+	nav.main {
+		margin-top: 30px;		
+	}
+}
+
+.cover-layout {
+	margin: 20px 0;
+}

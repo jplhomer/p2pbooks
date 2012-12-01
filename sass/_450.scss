@@ -1,0 +1,11 @@
+/* Cover Layout */
+
+.cover-layout {
+	a.book {
+		float: left;
+		width: auto;
+		margin: 0 10px 10px 0;
+		@include border-radius(5px);
+		@include box-shadow(1px 1px 1px #cccccc);
+	}
+}
