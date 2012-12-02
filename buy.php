@@ -1,49 +1,57 @@
-<?php include("./elements/header.php");
+<?php
 
+if (isset($_POST['price'])) {
 
-// Include the Dwolla REST Client
-require './lib/dwolla.php';
+	$price = $_POST['price'];
 
-// Include any required keys
-require '_keys.php';
+	// Include the Dwolla REST Client
+	require './lib/dwolla.php';
 
-// Instantiate a new Dwolla REST Client
-$Dwolla = new DwollaRestClient();
+	// Include any required keys
+	require '_keys.php';
 
-// Seed a previously generated access token
-$Dwolla->setToken($token);
+	// Instantiate a new Dwolla REST Client
+	$Dwolla = new DwollaRestClient();
 
+	// Seed a previously generated access token
+	$Dwolla->setToken($token);
 
-/**
- * EXAMPLE 1: 
- *   Send money ($1.00) to a Dwolla ID 
- **/
-$transactionId = $Dwolla->send($pin, '812-734-7288', 1.00);
-if(!$transactionId) { echo "Error: {$Dwolla->getError()} \n"; } // Check for errors
-else { echo "Send transaction ID: {$transactionId} \n"; } // Print Transaction ID
-
-
-/**
- * EXAMPLE 2: 
- *   Send money ($1.00) to an email address, with a note
- **/
-/*$transactionId = $Dwolla->send($pin, 'michael@dwolla.com', 1.00, 'Email', 'Everyone loves getting money');
-if(!$transactionId) { echo "Error: {$Dwolla->getError()} \n"; } // Check for errors
-else { echo "Send transaction ID: {$transactionId} \n"; } // Print Transaction ID*/
+	$transactionId = $Dwolla->send($pin, '812-713-9234', $price);
+	if(!$transactionId) { $msg = "Error: {$Dwolla->getError()} \n"; } // Check for errors
+	else { $msg = "Transaction sent: {$transactionId} \n"; } // Print Transaction ID
+}
 ?>
 
 	<?php $bookId = $_GET['bookId']; ?>
+
+	<?php if (!empty($msg)) { ?>
+
+	<h2><?php echo $msg; ?></h2>
+
+	<?php } else { ?>
 
 	<h2>Buy Book</h2>
 
 	<?php $book = lookupBook($bookId, false); ?>
 
-	<h3><?php echo $book->title; ?></h3>
+	<form class="add-book" method="post">
 
-	<h4><?php echo $book->author; ?></h4>
+		<div class="cover">
+			<img src="<?php echo $book->image; ?>" />
+		</div>
+		<div class="info">
+			<h3><?php echo $book->title; ?></h3>
 
-	<img src="<?php echo $book->thumbnail; ?>" />
+			<h4><?php echo $book->author; ?></h4>
 
-	<a class="btn" href="#">Send Money</a>
+			<p>You're about to buy this book for <strong><?php echo $book->listPrice; ?></strong>. Proceed?</p>
+
+			<input type="hidden" name="price" value="<?php echo $book->listPrice; ?>" />
+
+			<input type="submit" value="Send money to this dude" />
+		</div>
+	</form>
+
+	<?php } ?>
 
 <?php include("./elements/footer.php"); ?>
