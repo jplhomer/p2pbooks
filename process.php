@@ -258,7 +258,8 @@ function loadUser($data) {
 function findUser($singlyId) {
 	global $endpoint;
 
-	$request = $endpoint . '/users?{"singlyId":"' . $singlyId . '"}';	
+	$request = $endpoint . '/users?{"singlyId":"' . $singlyId . '"}';
+	echo $request;
 	$response = file_get_contents($request);
 	echo $response;
 	$jsonobj = json_decode($response);
