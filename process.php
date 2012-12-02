@@ -85,7 +85,7 @@ function listAllCampuses($echo=false) {
 function lookupBook($bookId) {
 	global $endpoint;
 
-	$request = $endpoint . "/books/" . $bookId;
+	$request = $endpoint . "/book/" . $bookId;
 	$response = file_get_contents($request);
 
 	echo $response;
@@ -95,9 +95,9 @@ function searchBooks($query, $echo=true) {
 	global $endpoint;
 
 	//$request = $endpoint . "/searchBooks/" . $query;
-	$request = $endpoint . "/books?title=" . $query;
+	$request = $endpoint . "/searchBooks/" . $query;
 
-	echo $request;
+	//echo $request;
 	$response = file_get_contents($request);
 
 	if ($echo) {
@@ -112,11 +112,13 @@ function addBook($data) {
 
 	global $endpoint;
 
-	$request = $endpoint . "/books";
+	$request = $endpoint . "/addBook";
 
 	// jSON URL which should be requested
 	$json_url = $request;
-	 
+	
+	$data['listPrice'] = intval($data['listPrice']);
+
 	$username = 'your_username';  // authentication
 	$password = 'your_password';  // authentication
 	 
@@ -140,7 +142,6 @@ function addBook($data) {
 	// Getting results
 	$result =  curl_exec($ch); // Getting jSON result string
 	echo $result;
-
 }
 
 function createUser($data) {
@@ -213,7 +214,7 @@ function createUserFromSingly($data) {
 
 	// add this user to the DB
 
-	$json_url = $endpoint . "/sellers";
+	$json_url = $endpoint . "/users";
 	 
 	// jSON String for request
 	$json_string = json_encode($user);
