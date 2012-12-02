@@ -9,7 +9,8 @@ require '_keys.php';
 
 // OAuth parameters
 $redirectUri = 'http://p2pbooks.herokuapp.com/activate-dwolla.php'; // Point back to this file/URL
-$permissions = array("Send", "Transactions", "Balance", "Request", "Contacts", "AccountInfoFull", "Funding");
+//$permissions = array("Send", "Transactions", "Balance", "Request", "Contacts", "AccountInfoFull", "Funding");
+$permissions = array("Send");
 
 // Instantiate a new Dwolla REST Client
 $Dwolla = new DwollaRestClient($apiKey, $apiSecret, $redirectUri, $permissions);
