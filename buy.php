@@ -18,7 +18,10 @@ if (isset($_POST['price'])) {
 
 	$transactionId = $Dwolla->send($pin, '812-713-9234', $price);
 	if(!$transactionId) { $msg = "Error: {$Dwolla->getError()} \n"; } // Check for errors
-	else { $msg = "Transaction sent: {$transactionId} \n"; } // Print Transaction ID
+	else { 
+		$msg = "Transaction sent: {$transactionId} \n"; 
+		sellBook($_POST['bookId']);
+	} // Print Transaction ID
 }
 ?>
 
@@ -47,6 +50,7 @@ if (isset($_POST['price'])) {
 			<p>You're about to buy this book for <strong>$<?php echo $book->listPrice; ?></strong>. Proceed?</p>
 
 			<input type="hidden" name="price" value="<?php echo $book->listPrice; ?>" />
+			<input type="hidden" name="bookId" value="<?php echo $book->id; ?>" />
 
 			<input type="submit" class="btn" value="Send money to this dude" />
 		</div>

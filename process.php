@@ -341,3 +341,29 @@ function requestBook($data) {
 	*/
 
 }
+
+function sellBook($bookId) {
+
+	global $endpoint;
+
+	$request = $endpoint . "/sellBook/" . $bookId;
+
+	// jSON URL which should be requested
+	$json_url = $request;
+ 
+	// Initializing curl
+	$ch = curl_init( $json_url );
+	 
+	// Configuring curl options
+	$options = array(
+		CURLOPT_RETURNTRANSFER => true,
+		CURLOPT_HTTPHEADER => array('Content-type: application/json')
+	);
+	 
+	// setting curl options
+	curl_setopt_array( $ch, $options );
+	 
+	// Getting results
+	$result =  curl_exec($ch); // Getting jSON result string
+	//echo $result;	
+}
