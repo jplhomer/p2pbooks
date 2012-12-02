@@ -187,8 +187,8 @@ function createUserFromSingly($data) {
 	$user = array();
 
 	$user['singlyId'] = $data['result']['id'];
-	$user['fbid'] = $data['result']['facebook'][0];
-	$user['access_token'] = $_SESSION['access_token'];
+	//$user['fbid'] = $data['result']['facebook'][0];
+	//$user['access_token'] = $_SESSION['access_token'];
 
 	// get Facebook request
 	$morerequest = "https://api.singly.com/profile?access_token=" . $user['access_token'];
@@ -214,7 +214,7 @@ function createUserFromSingly($data) {
 
 	// add this user to the DB
 
-	$json_url = $endpoint . "/users";
+	$json_url = $endpoint . "/addUser";
 	 
 	// jSON String for request
 	$json_string = json_encode($user);
