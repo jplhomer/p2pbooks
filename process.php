@@ -258,8 +258,9 @@ function loadUser($data) {
 function findUser($singlyId) {
 	global $endpoint;
 
-	$request = $endpoint . '/sellers?{"singlyId":"' . $singlyId . '"}';	
+	$request = $endpoint . '/users?{"singlyId":"' . $singlyId . '"}';	
 	$response = file_get_contents($request);
+	echo $response;
 	$jsonobj = json_decode($response);
 
 	if (count($jsonobj) == 1) {
