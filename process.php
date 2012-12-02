@@ -249,7 +249,7 @@ function loadUser($data) {
 		$user = createUserFromSingly($data);
 		$_SESSION['p2pbooksuser'] = $user;
 		//print_r($_SESSION['user']);
-		//echo "Didn't find you. " . $user;
+		echo "Didn't find you. " . $user;
 	}
 
 	//print_r($user);
@@ -259,9 +259,9 @@ function findUser($singlyId) {
 	global $endpoint;
 
 	$request = $endpoint . '/users?{"singlyId":"' . $singlyId . '"}';
-	echo $request;
+	//echo $request;
 	$response = file_get_contents($request);
-	echo $response;
+	//echo $response;
 	$jsonobj = json_decode($response);
 
 	if (count($jsonobj) == 1) {
