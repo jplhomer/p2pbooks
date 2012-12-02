@@ -15,8 +15,8 @@
                 <div class="publisher"><?php echo $book->publisher; ?></div>
                 <?php $seller = findUser($book->userId); ?>
                 <div class="seller">
-                    <img class="thumbnail" src="<?php echo $seller[0]->thumbnail; ?>" width="25" height="25" />
-                    <div class="name"><?php echo $seller[0]->firstName . ' ' . $seller[0]->lastName; ?></div>
+                    <img class="thumbnail" src="https://graph.facebook.com/1182780067/picture?type=large&date_format=U" width="25" height="25" />
+                    <div class="name">Josh Larson</div>
                 </div>
                 <?php setlocale(LC_MONETARY, 'en_US'); ?>
                 <div class="price"><?php echo money_format('%.2n', $book->listPrice); ?></div>

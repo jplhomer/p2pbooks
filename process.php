@@ -350,6 +350,8 @@ function sellBook($bookId) {
 
 	// jSON URL which should be requested
 	$json_url = $request;
+
+	echo $json_url;
  
 	// Initializing curl
 	$ch = curl_init( $json_url );
