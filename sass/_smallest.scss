@@ -148,6 +148,27 @@ img {
   }
 }
 
+/* Add Book */
+
+.add-book {
+  label, input {
+    display: block;
+  }
+
+  label {
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #cccccc;
+    text-align: left;
+  }
+
+  input {
+    padding: 10px;
+    margin-bottom: 15px;
+    width: 100%;
+  }
+}
+
 /* FOOTER */
 
 footer.bottom {
@@ -229,6 +250,7 @@ footer.bottom {
   @include transition(background 0.1s ease);
   @include box-shadow(1px 1px 1px #cccccc);
   cursor: pointer;
+  border: 0;
 
   &:hover, &:focus {
     background: #cccccc;

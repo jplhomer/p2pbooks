@@ -70,6 +70,22 @@ header.top {
 	}
 }
 
+.add-book {
+	width: 680px;
+	margin: 0 auto;
+
+	.image-holder {
+		float: left;
+		width: 130px;
+		padding-right: 10px;
+	}
+
+	.inputs {
+		float: left;
+		width: 550px;
+	}
+}
+
 .modal-container {
 	.modal {
 		@include clearfix();

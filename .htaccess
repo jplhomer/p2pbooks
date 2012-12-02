@@ -1,7 +1,7 @@
-  Options +FollowSymLinks
-  RewriteEngine On
-  RewriteCond %{SCRIPT_FILENAME} !-d
-  RewriteCond %{SCRIPT_FILENAME} !-f
-  RewriteRule ^add/ ./add.php
-  RewriteRule ^books/(\d+)*$ ./book.php?id=$1
-  RewriteRule ^search/(.*)$ ./search.php?query=$1
+  #Options +FollowSymLinks
+  #RewriteEngine On
+  #RewriteCond %{SCRIPT_FILENAME} !-d
+  #RewriteCond %{SCRIPT_FILENAME} !-f
+  #RewriteRule ^(.*)$ ./index.php?page=$1
+  ##RewriteRule ^books/(\d+)*$ ./book.php?id=$1
+  #RewriteRule ^search/(.*)$ ./search.php?query=$1

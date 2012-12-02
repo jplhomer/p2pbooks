@@ -15,6 +15,7 @@
                 <div class="price">$<?php echo $book->listPrice; ?></div>
             </div>
         </a>
+        
         <?php } ?>
 
     </div>

@@ -25,8 +25,14 @@ var P2PBOOKS = {
     
   },
 
+  closeModal: function() {
+    $(".modal-container").fadeOut("fast");
+  },
+
   initGoogleLookup: function() {
-    $( "#add-book" ).autocomplete({
+    var book;
+
+    $( "#add-book-title" ).autocomplete({
       source: function( request, response ) {
         $.ajax({
           url: "https://www.googleapis.com/books/v1/volumes?",
@@ -39,20 +45,20 @@ var P2PBOOKS = {
                 $.map( data.items, function( item ) {
                   return {
                       label: item.volumeInfo.title,
-                      value: item.volumeInfo.title
+                      value: item.id
                   }
               }));
           },
           error: function( data ) {
             alert("Error! " + data);
           }
-      });
+      })
     },
     minLength: 2,
     select: function( event, ui ) {
-        log( ui.item ?
-            "Selected: " + ui.item.label :
-            "Nothing selected, input was " + this.value);
+        var id = ui.item.value;
+        P2PBOOKS.mapGoogleBooks(id);
+        //ui.item.value = ui.item.label;
     },
     open: function() {
         $( this ).removeClass( "ui-corner-all" ).addClass( "ui-corner-top" );
@@ -61,6 +67,21 @@ var P2PBOOKS = {
         $( this ).removeClass( "ui-corner-top" ).addClass( "ui-corner-all" );
     }
   });
+  },
+
+  mapGoogleBooks : function(id) {
+    $.get('https://www.googleapis.com/books/v1/volumes?q={id:' + id + '}', function(data) {
+      var book = data.items[0];
+      console.log(book);
+      $('.add-book #add-book-title').val(book.volumeInfo.title);
+      if (book.volumeInfo.authors) {
+        $('.add-book #author').val(book.volumeInfo.authors.join(', '));
+      }
+      $('.add-book #isbn').val(book.volumeInfo.industryIdentifiers[1].identifier);
+      $('.add-book #publisher').val(book.volumeInfo.publisher);
+      $('.add-book #image').val(book.volumeInfo.imageLinks.thumbnail);
+      $('.add-book .image').html('<img src="' + book.volumeInfo.imageLinks.thumbnail + '" alt="Image" />');
+    })
   },
 
   lookupBook : function(bookId, cb) {
@@ -102,7 +123,18 @@ var P2PBOOKS = {
       P2PBOOKS.initGoogleLookup();
 
       $(document).keyup(function(e) {
-        if (e.keyCode == 27) { P2PBOOKS.toggleModal(); }
+        if (e.keyCode == 27) { P2PBOOKS.closeModal(); }
+      });
+
+      $(".add-book").submit(function(e) {
+        e.preventDefault();
+
+        var data = $(this).serialize();
+        data = data + '&action=addBook';
+
+        $.post("./process.php", data, function(message) {
+          console.log(message);
+        })
       });
 
     },

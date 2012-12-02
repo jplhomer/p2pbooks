@@ -22,6 +22,17 @@ if (!empty($_GET['action'])) {
 	}
 }
 
+if (!empty($_POST['action'])) {
+	$action = $_POST['action'];
+
+	switch ($action) {
+
+		case 'addBook':
+			addBook($_POST);
+			break;
+	}
+}
+
 function listAll($echo=false) {
 	global $endpoint;
 
@@ -58,4 +69,10 @@ function searchBooks($query, $echo=true) {
 		$jsonobj = json_decode($response);
 		return $jsonobj;
 	}
+}
+
+function addBook($data) {
+
+	// Eventually we'll sent this to the endpoint with a CURL request, but for now...
+	print_r($data);
 }

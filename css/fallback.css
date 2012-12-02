@@ -719,8 +719,27 @@ img {
   text-shadow: -1px 0 0 #efefef;
 }
 
+/* Add Book */
+/* line 154, ../sass/_smallest.scss */
+.add-book label, .add-book input {
+  display: block;
+}
+/* line 158, ../sass/_smallest.scss */
+.add-book label {
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #cccccc;
+  text-align: left;
+}
+/* line 165, ../sass/_smallest.scss */
+.add-book input {
+  padding: 10px;
+  margin-bottom: 15px;
+  width: 100%;
+}
+
 /* FOOTER */
-/* line 153, ../sass/_smallest.scss */
+/* line 174, ../sass/_smallest.scss */
 footer.bottom {
   *zoom: 1;
   text-align: center;
@@ -738,12 +757,12 @@ footer.bottom:before, footer.bottom:after {
 footer.bottom:after {
   clear: both;
 }
-/* line 160, ../sass/_smallest.scss */
+/* line 181, ../sass/_smallest.scss */
 footer.bottom a {
   color: #666666;
 }
 
-/* line 166, ../sass/_smallest.scss */
+/* line 187, ../sass/_smallest.scss */
 .modal-container {
   display: none;
   position: fixed;
@@ -754,7 +773,7 @@ footer.bottom a {
   z-index: 9;
   background: rgba(0, 0, 9, 0.7);
 }
-/* line 176, ../sass/_smallest.scss */
+/* line 197, ../sass/_smallest.scss */
 .modal-container .modal {
   margin: 20px auto;
   padding: 20px;
@@ -765,41 +784,41 @@ footer.bottom a {
   -moz-border-radius: 5px;
   border-radius: 5px;
 }
-/* line 184, ../sass/_smallest.scss */
+/* line 205, ../sass/_smallest.scss */
 .modal-container .modal h2 {
   margin: 0 0 5px;
   font-size: 20px;
 }
-/* line 190, ../sass/_smallest.scss */
+/* line 211, ../sass/_smallest.scss */
 .modal-container .modal .image {
   width: 30%;
   float: left;
   margin-right: 3%;
 }
-/* line 196, ../sass/_smallest.scss */
+/* line 217, ../sass/_smallest.scss */
 .modal-container .modal .info {
   float: left;
   width: 60%;
   margin-right: 3%;
 }
-/* line 202, ../sass/_smallest.scss */
+/* line 223, ../sass/_smallest.scss */
 .modal-container .modal .actions {
   float: left;
   width: 100%;
   margin-top: 10px;
 }
-/* line 207, ../sass/_smallest.scss */
+/* line 228, ../sass/_smallest.scss */
 .modal-container .modal .actions .btn {
   width: 100%;
 }
-/* line 213, ../sass/_smallest.scss */
+/* line 234, ../sass/_smallest.scss */
 .modal-container .close {
   float: right;
   margin: 5px 5px 0 0;
 }
 
 /* BUTTON */
-/* line 222, ../sass/_smallest.scss */
+/* line 243, ../sass/_smallest.scss */
 .btn, a:visited.btn, button {
   display: inline-block;
   text-decoration: none;
@@ -816,13 +835,14 @@ footer.bottom a {
   -moz-box-shadow: 1px 1px 1px #cccccc;
   box-shadow: 1px 1px 1px #cccccc;
   cursor: pointer;
+  border: 0;
 }
-/* line 233, ../sass/_smallest.scss */
+/* line 255, ../sass/_smallest.scss */
 .btn:hover, .btn:focus, a:visited.btn:hover, a:visited.btn:focus, button:hover, button:focus {
   background: #cccccc;
   color: #033063;
 }
-/* line 238, ../sass/_smallest.scss */
+/* line 260, ../sass/_smallest.scss */
 .btn.close, a:visited.btn.close, button.close {
   color: #cccccc;
   text-shadow: 1px 0 0 #efefef;
@@ -841,7 +861,7 @@ footer.bottom a {
   border-radius: 3px;
   line-height: 1;
 }
-/* line 247, ../sass/_smallest.scss */
+/* line 269, ../sass/_smallest.scss */
 .btn.close:hover, .btn.close:focus, a:visited.btn.close:hover, a:visited.btn.close:focus, button.close:hover, button.close:focus {
   background: #dddddd;
 }
