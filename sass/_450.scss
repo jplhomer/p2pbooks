@@ -8,13 +8,22 @@
 		@include border-radius(5px);
 		@include box-shadow(1px 1px 1px #cccccc);
 		text-align: left;
+		position: relative;
 
-		.author {
+		.cover {
 			float: left;
 		}
 
-		.price {
-			float: right;
+		.info {
+			float: left;
+			width: 118px;
+			margin-left: 10px;
+
+			.price {
+				position: absolute;
+				bottom: 0;
+				right: 10px;
+			}
 		}
 	}
 }

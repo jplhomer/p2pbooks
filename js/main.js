@@ -2,8 +2,25 @@
 // @see http://paulirish.com/2009/markup-based-unobtrusive-comprehensive-dom-ready-execution/
 var P2PBOOKS = {
   
-  toggleModal: function() {
-    $(".modal-container").fadeToggle("fast");
+  toggleModal: function(bookId) {
+
+    // If it's loading from a book listing click, grab the data for the book
+    if (bookId) {
+      P2PBOOKS.lookupBook(bookId, function(data) {
+        if (data) {
+          var book = JSON.parse(data);
+          $(".modal .title").html(book.title);
+          $(".modal .author").html(book.author);
+          $(".modal .price").html(book.listPrice);
+          $(".modal-container").fadeToggle("fast");    
+        } else {
+          console.log("error " + data);
+        }
+      })
+    } else {
+      $(".modal-container").fadeToggle("fast");
+    }
+    
   },
 
   initGoogleLookup: function() {
@@ -43,12 +60,29 @@ var P2PBOOKS = {
     }
   });
   },
+
+  lookupBook : function(bookId, cb) {
+    if (bookId) {
+      // Run Process.php lookup function, return object of results
+      $.get('./process.php',{
+          'action': 'lookupBook',
+          'bookId': bookId
+        },
+        function(data) {
+          cb(data);
+        });
+
+    } else {
+      return cb(false);
+    }
+  },
   
   // Initializers
   common: {
     init: function() { 
       $(".book").click(function() {
-        P2PBOOKS.toggleModal();
+        var bookId = $(this).data('bookid');
+        P2PBOOKS.toggleModal(bookId);
       });
 
       $(".close").click(function() {

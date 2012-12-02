@@ -9,11 +9,13 @@
             <div class="modal">
                 <a class="btn close">×</a>
                 <header>
-                    <h2>Book Title</h2>
+                    <h2 class="title">Book Title</h2>
                 </header>
                 <div class="image"><img src="http://placehold.it/600x750" /></div>
                 <div class="info">
-                    <p>Book description</p>
+                    <p class="author">Book Author</p>
+
+                    <div class="price">$20</div>
                 </div>
                 <div class="actions">
                     <a class="btn">Request Book</a>
