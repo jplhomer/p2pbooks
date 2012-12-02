@@ -16,6 +16,7 @@ var P2PBOOKS = {
           $(".modal .publisher").html(book.publisher);
           $(".modal .isbn").html(book.isbn);
           $(".modal .request-book").attr('data-bookid', book.id);
+          $(".modal .request-book").attr('href', './buy.php?bookId=' + book.id);
           $(".modal-container").fadeToggle("fast");
         } else {
           console.log("error " + data);
@@ -148,10 +149,12 @@ var P2PBOOKS = {
         })
       });
 
+      /*
       $(".request-book").click(function() {
         var bookId = $(this).data('bookid');
         P2PBOOKS.requestBook(bookId);
-      })      
+      });
+*/
 
     },
     finalize: function() {

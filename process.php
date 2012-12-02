@@ -82,13 +82,18 @@ function listAllCampuses($echo=false) {
 	}
 }
 
-function lookupBook($bookId) {
+function lookupBook($bookId, $echo=true) {
 	global $endpoint;
 
 	$request = $endpoint . "/book/" . $bookId;
 	$response = file_get_contents($request);
 
-	echo $response;
+	if ($echo) {
+		echo $response;
+	} else {
+		$jsonobj = json_decode($response);
+		return $jsonobj;
+	}
 }
 
 function searchBooks($query, $echo=true) {
