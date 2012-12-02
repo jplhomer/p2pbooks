@@ -1,4 +1,4 @@
-<?php
+<?php include("./elements/header.php");
 
 if (isset($_POST['price'])) {
 
