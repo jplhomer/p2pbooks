@@ -119,6 +119,7 @@ img {
 
 .cover-layout {
   @include clearfix();
+  position: relative;
 
   a.book {
     text-decoration: none;
@@ -150,7 +151,7 @@ img {
 
 /* Add Book */
 
-.add-book {
+form.form, .add-book {
   label, input {
     display: block;
   }
@@ -162,10 +163,23 @@ img {
     text-align: left;
   }
 
-  input {
-    padding: 10px;
+  input, select {
+    padding: 0 10px;
+    line-height: 2;
     margin-bottom: 15px;
     width: 100%;
+  }
+
+  select {
+    line-height: 30px;
+    height: 30px;
+  }
+
+  .message {
+    color: green;
+    text-align: center;
+    display: none;
+    padding: 10px;
   }
 }
 

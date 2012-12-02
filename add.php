@@ -3,6 +3,7 @@
 	<h2>Add a Book to Sell</h2>
 
 	<form class="add-book">
+		<div class="message"></div>
 
 		<div class="image-holder">
 			<input type="hidden" name="image" id="image" value="image" />
@@ -23,8 +24,10 @@
 			<label for="publisher">Publisher</label>
 			<input name="publisher" id="publisher" type="text" placeholder="Publisher" />
 
-			<label for="listingPrice">Listing Price</label>
-			<input name="listingPrice" id="listingPrice" type="text" placeholder="0.00" />
+			<label for="listPrice">Listing Price</label>
+			<input name="listPrice" id="listPrice" type="text" placeholder="0.00" />
+
+			<input name="userId" id="user" type="hidden" value="<?php echo $p2pbooksuser->singlyId; ?>" />
 
 			<input type="submit" class="btn" value="Add Book" id="add-book" />
 		</div>

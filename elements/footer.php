@@ -22,7 +22,12 @@
                     <div class="price">$20</div>
                 </div>
                 <div class="actions">
-                    <a class="btn">Request Book</a>
+                    <a class="btn request-book">Request Book</a>
+
+                    <div class="seller">
+                        <img class="thumbnail" src="" width="25" height="25" />
+                        <div class="name"></div>
+                    </div>
                 </div>
             </div>
         </div>

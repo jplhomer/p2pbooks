@@ -1,59 +1,24 @@
-<?php
-require('lib/PHP-OAuth2/Client.php');
+<?php session_start(); if (isset($_SESSION['access_token'])) { header("Location: ./index.php"); } ?>
+<?php include("./elements/header.php"); ?>
 
-require('lib/PHP-OAuth2/GrantType/IGrantType.php');
-require('lib/PHP-OAuth2/GrantType/AuthorizationCode.php');
+<h2>Login to p2papps</h2>
 
-session_start();
+<?php if (isset($_SESSION['access_token'])) { ?>
+<p>You are logged in.</p>
+<p><a class="btn" href="?logout=true">Log Out</a></p>
 
-// These are your Singly client ID and secret from here:
-// https://singly.com/apps
-const CLIENT_ID = '1fb0c90d0d02eee461f45e55d8fa487a';
-const CLIENT_SECRET = 'ce00ae000aa0125ddfe3449930bce206';
+<?php } else { ?>
 
-// Set his is the URL of this file (http://yourdomain.com/index.php, for example)
-const REDIRECT_URI = 'http://p2pbooks.herokuapp.com/login.php';
+<p>You can login with Facebook. Aaand that's pretty much it. <em>Because we're dicks.</em>
 
-const AUTHORIZATION_ENDPOINT = 'https://api.singly.com/oauth/authenticate';
-const TOKEN_ENDPOINT = 'https://api.singly.com/oauth/access_token';
+<?php 
 
-$client = new OAuth2\Client(CLIENT_ID, CLIENT_SECRET);
+$services = Array('facebook');
 
-function getSinglyAuthenticationUrl($service, $client) {
-  $auth_url = $client->getAuthenticationUrl(AUTHORIZATION_ENDPOINT, REDIRECT_URI)
-    ."&service=". $service;
-
-  if (isset($_SESSION['access_token'])) {
-    $auth_url .= '&access_token=' . $_SESSION['access_token'];
-  }
-  return $auth_url;
+foreach ($services as $service) {
+  echo '<p><a class="btn" href="' . getSinglyAuthenticationUrl($service, $client) . '">Connect with ' . $service . "</a></p>";
 }
-if ($_GET['logout']) {
-  unset($_SESSION['access_token']);
-  echo 'Logged out';
 
-} elseif (!isset($_GET['code'])) {
-  $services = Array('facebook', 'twitter', 'github');
-
-  echo '<h1>Add social profiles to your p2pbooks account</h1>';
-  echo '<p><a href="/?logout=true">Clear your session</a> to create a new account</p>';
-
-  foreach ($services as $service) {
-    echo '<a href="' . getSinglyAuthenticationUrl($service, $client) . '">' . $service . "</a><br/>";
-  }
-
-} else {
-   $params = array('code' => $_GET['code'], 'redirect_uri' => REDIRECT_URI);
-
-   $response = $client->getAccessToken(TOKEN_ENDPOINT, 'authorization_code', $params);
-
-   $client->setAccessToken($response['result']['access_token']);
-   // You should also store this in the user's session
-   $_SESSION['access_token'] = $response['result']['access_token'];
-
-   // From here on you can access Singly API URLs using $client->fetch
-   $response = $client->fetch('https://api.singly.com/profiles');
-   print_r($response);
-   echo '<br>Go back to add another service.';
 }
-?>
+
+include("./elements/footer.php"); ?>

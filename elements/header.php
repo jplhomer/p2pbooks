@@ -1,3 +1,4 @@
+<?php //session_start(); if (!isset($_SESSION['access_token'])) { header("Location: ./login.php"); } ?>
 <?php require("./process.php"); ?>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
@@ -55,15 +56,16 @@
                 </div>
                 <nav class="main">
                     <ul>
-                        <li><a href="./add.php">Add Book</a></li>
+                        <li><a href="./add.php" title="Add Book">+</a></li>
                         <li><a href="#">Buy</a></li>
-                        <li><a href="#">Sell</a></li>
-                        <li><a href="#">Account<span class="caret"> &#9660;</span></a>
+                        <li><a href="./sell.php">Sell</a></li>
+                        <?php if (isset($_SESSION['access_token'])) { ?>
+                        <li><a href="./sell.php"><img src="<?php echo $p2pbooksuser->thumbnail; ?>" width="23" height="23" /> <?php echo $p2pbooksuser->firstName . ' ' . $p2pbooksuser->lastName; ?><span class="caret"> &#9660;</span></a>
                             <ul>
-                                <li><a href="#">Option 1</a></li>
-                                <li><a href="#">Option 2</a></li>
+                                <li><a href="?logout=true">Log Out</a></li>
                             </ul>
                         </li>
+                        <?php } ?>
                     </ul>
                 </nav>
             </div>

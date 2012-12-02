@@ -9,9 +9,11 @@
 		@include box-shadow(1px 1px 1px #cccccc);
 		text-align: left;
 		position: relative;
+		width: 300px;
 
 		.cover {
 			float: left;
+			width: 128px;
 		}
 
 		.info {
@@ -23,6 +25,23 @@
 				position: absolute;
 				bottom: 0;
 				right: 10px;
+			}
+
+			.seller {
+				float: left;
+				text-align: left;
+				margin-top: 20px;
+
+				.thumbnail, .name {
+					float: left;
+				}
+
+				.name {
+					margin-left: 5px;
+					font-size: 12px;
+					font-weight: bold;
+					padding-top: 5px;
+				}
 			}
 		}
 	}

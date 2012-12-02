@@ -9,12 +9,14 @@ var P2PBOOKS = {
       P2PBOOKS.lookupBook(bookId, function(data) {
         if (data) {
           var book = JSON.parse(data);
+          $(".modal .image").html('<img src="' + book.image + '" />');
           $(".modal .title").html(book.title);
           $(".modal .author").html(book.author);
-          $(".modal .price").html(book.listPrice);
+          $(".modal .price").html(book.listPrice.toFixed(2));
           $(".modal .publisher").html(book.publisher);
           $(".modal .isbn").html(book.isbn);
-          $(".modal-container").fadeToggle("fast");    
+          $(".modal .request-book").attr('data-bookid', book.id);
+          $(".modal-container").fadeToggle("fast");
         } else {
           console.log("error " + data);
         }
@@ -27,6 +29,12 @@ var P2PBOOKS = {
 
   closeModal: function() {
     $(".modal-container").fadeOut("fast");
+  },
+
+  requestBook: function(bookId) {
+    $.post('./process.php',{ 'action': 'requestBook', 'bookId': bookId }, function(data) {
+      console.log(data);
+    })
   },
 
   initGoogleLookup: function() {
@@ -134,12 +142,24 @@ var P2PBOOKS = {
 
         $.post("./process.php", data, function(message) {
           console.log(message);
+          $(".message").html('Your book has been added!').slideDown();
+          $(".add-book")[0].reset();
+          $(".image").html('<img src="http://placehold.it/128x197" />');
         })
       });
 
+      $(".request-book").click(function() {
+        var bookId = $(this).data('bookid');
+        P2PBOOKS.requestBook(bookId);
+      })      
+
     },
     finalize: function() {
-      
+      $('.cover-layout').imagesLoaded(function() {
+        $('.cover-layout').masonry({
+          itemSelector : '.book'
+        });  
+      });      
     }
   },
   
