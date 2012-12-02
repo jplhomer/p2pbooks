@@ -359,7 +359,7 @@ function sellBook($bookId) {
 	// Configuring curl options
 	$options = array(
 		CURLOPT_RETURNTRANSFER => true,
-		CURLOPT_HTTPHEADER => array('Content-type: application/json'),
+		//CURLOPT_HTTPHEADER => array('Content-type: application/json'),
 		CURLOPT_POST => 1
 	);
 	 
