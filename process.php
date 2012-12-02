@@ -15,6 +15,10 @@ if (!empty($_GET['action'])) {
 		case 'listAll':
 			listAll(true);
 			break;
+
+		case 'searchBooks':
+			searchBooks($query);
+			break;
 	}
 }
 
@@ -38,6 +42,20 @@ function lookupBook($bookId) {
 
 	$request = $endpoint . "/book/" . $bookId;
 	$response = file_get_contents($request);
-	
+
 	echo $response;
+}
+
+function searchBooks($query, $echo=true) {
+	global $endpoint;
+
+	$request = $endpoing . "/searchBooks/" . $query;
+	$response = file_get_contents($request);
+
+	if ($echo) {
+		echo $response;
+	} else {
+		$jsonobj = json_decode($response);
+		return $jsonobj;
+	}
 }

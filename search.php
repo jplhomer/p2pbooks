@@ -1,7 +1,19 @@
 <?php include("./elements/header.php"); ?>
 
+<?php 
+	if (!empty($_GET['query'])) {
+    	$books = searchBooks($_GET['query']);
+    } else {
+    	$books = listAll();
+    }
+    $bookCount = count($books);
+    ?>
+
+    <h2>Search results for <em><?php echo $_GET['query']; ?></em>: (<?php echo $bookCount; ?>) results</h2>
+
     <div class="cover-layout">
-        <?php $books = listAll();
+        <?php 
+
         foreach ($books as $book) { ?>
         
         <a class="book" data-bookid="<?php echo $book->id; ?>">

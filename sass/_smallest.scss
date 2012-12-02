@@ -179,12 +179,34 @@ footer.bottom {
     background: #ffffff;
     overflow: auto;
     width: 90%;
-    height: 90%;
     @include border-radius(5px);
 
     h2 {
       margin: 0 0 5px;
       font-size: 20px; 
+    }
+
+
+    .image {
+      width: 30%;
+      float: left;
+      margin-right: 3%;
+    }
+
+    .info {
+      float: left;
+      width: 60%;
+      margin-right: 3%;
+    }
+
+    .actions {
+      float: left;
+      width: 100%;
+      margin-top: 10px;
+
+      .btn {
+        width: 100%;
+      }
     }
   }
 

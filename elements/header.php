@@ -32,24 +32,26 @@
         <meta property="twitter:site" content="">
         <meta property="twitter:creator" content="">
 
-        <link rel="stylesheet" href="./css/jquery-ui-1.9.2.custom.css">
-        <link rel="stylesheet" href="./css/base.css">
+        <link rel="stylesheet" href="/css/jquery-ui-1.9.2.custom.css">
+        <link rel="stylesheet" href="/css/base.css">
             
         <!--[if lte IE 8]>
         <link rel="stylesheet" href="./css/fallback.css">
         <![endif]-->
         
-        <script src="./js/vendor/modernizr-2.6.1.min.js"></script>
+        <script src="/js/vendor/modernizr-2.6.1.min.js"></script>
     </head>
     <body>
 
         <header class="top">
             <div class="wrapper">
                 <div class="brand">
-                    <a href="#"><img src="./img/logo.svg" alt="p2pbooks" /></a>
+                    <a href="#"><img src="/img/logo.svg" alt="p2pbooks" /></a>
                 </div>
                 <div class="search">
-                    <input name="query" placeholder="Title, Author, ISBN" />
+                    <form action="/search/" method="get">
+                        <input name="query" placeholder="Title, Author, ISBN" />
+                    </form>
                 </div>
                 <nav class="main">
                     <ul>

@@ -11,9 +11,13 @@
                 <header>
                     <h2 class="title">Book Title</h2>
                 </header>
-                <div class="image"><img src="http://placehold.it/600x750" /></div>
+                <div class="image"><img src="http://placehold.it/128x197" /></div>
                 <div class="info">
                     <p class="author">Book Author</p>
+
+                    <p class="publisher">Publisher</p>
+
+                    <p>ISBN: <span class="isbn">123</span></p>
 
                     <div class="price">$20</div>
                 </div>

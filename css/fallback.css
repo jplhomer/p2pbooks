@@ -761,24 +761,45 @@ footer.bottom a {
   background: #ffffff;
   overflow: auto;
   width: 90%;
-  height: 90%;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
 }
-/* line 185, ../sass/_smallest.scss */
+/* line 184, ../sass/_smallest.scss */
 .modal-container .modal h2 {
   margin: 0 0 5px;
   font-size: 20px;
 }
-/* line 191, ../sass/_smallest.scss */
+/* line 190, ../sass/_smallest.scss */
+.modal-container .modal .image {
+  width: 30%;
+  float: left;
+  margin-right: 3%;
+}
+/* line 196, ../sass/_smallest.scss */
+.modal-container .modal .info {
+  float: left;
+  width: 60%;
+  margin-right: 3%;
+}
+/* line 202, ../sass/_smallest.scss */
+.modal-container .modal .actions {
+  float: left;
+  width: 100%;
+  margin-top: 10px;
+}
+/* line 207, ../sass/_smallest.scss */
+.modal-container .modal .actions .btn {
+  width: 100%;
+}
+/* line 213, ../sass/_smallest.scss */
 .modal-container .close {
   float: right;
   margin: 5px 5px 0 0;
 }
 
 /* BUTTON */
-/* line 200, ../sass/_smallest.scss */
+/* line 222, ../sass/_smallest.scss */
 .btn, a:visited.btn, button {
   display: inline-block;
   text-decoration: none;
@@ -796,12 +817,12 @@ footer.bottom a {
   box-shadow: 1px 1px 1px #cccccc;
   cursor: pointer;
 }
-/* line 211, ../sass/_smallest.scss */
+/* line 233, ../sass/_smallest.scss */
 .btn:hover, .btn:focus, a:visited.btn:hover, a:visited.btn:focus, button:hover, button:focus {
   background: #cccccc;
   color: #033063;
 }
-/* line 216, ../sass/_smallest.scss */
+/* line 238, ../sass/_smallest.scss */
 .btn.close, a:visited.btn.close, button.close {
   color: #cccccc;
   text-shadow: 1px 0 0 #efefef;
@@ -820,7 +841,7 @@ footer.bottom a {
   border-radius: 3px;
   line-height: 1;
 }
-/* line 225, ../sass/_smallest.scss */
+/* line 247, ../sass/_smallest.scss */
 .btn.close:hover, .btn.close:focus, a:visited.btn.close:hover, a:visited.btn.close:focus, button.close:hover, button.close:focus {
   background: #dddddd;
 }
@@ -860,6 +881,10 @@ footer.bottom a {
 /* line 2, ../sass/_700.scss */
 .modal-container .modal {
   width: 600px;
+}
+/* line 5, ../sass/_700.scss */
+.modal-container .modal .image {
+  width: 130px;
 }
 
 /* line 1, ../sass/_940.scss */

@@ -12,6 +12,8 @@ var P2PBOOKS = {
           $(".modal .title").html(book.title);
           $(".modal .author").html(book.author);
           $(".modal .price").html(book.listPrice);
+          $(".modal .publisher").html(book.publisher);
+          $(".modal .isbn").html(book.isbn);
           $(".modal-container").fadeToggle("fast");    
         } else {
           console.log("error " + data);
