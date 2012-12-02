@@ -52,7 +52,7 @@ if (isset($_POST['price'])) {
 			<input type="hidden" name="price" value="<?php echo $book->listPrice; ?>" />
 			<input type="hidden" name="bookId" value="<?php echo $book->id; ?>" />
 
-			<input type="submit" class="btn" value="Send money to this dude" />
+			<input type="submit" class="btn" value="Send Money with Dwolla" />
 		</div>
 	</form>
 

@@ -2,7 +2,7 @@
         </div>
 
         <footer class="bottom">
-            A product of <a href="http://oldmacdonaldhackday.com/" target="_blank">Old MacDonald Hackathon</a>.
+            A product of <a href="http://oldmacdonaldhackday.com/" target="_blank">Old MacDonald Hackathon</a>. Built with <a href="http://www.dwolla.com" target="_blank">Dwolla</a>.
         </footer>
         
         <div class="modal-container">
