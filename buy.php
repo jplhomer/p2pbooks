@@ -34,7 +34,7 @@ if (isset($_POST['price'])) {
 
 	<?php $book = lookupBook($bookId, false); ?>
 
-	<form class="add-book" method="post">
+	<form class="add-book" method="post" action="./buy.php">
 
 		<div class="cover">
 			<img src="<?php echo $book->image; ?>" />
@@ -44,11 +44,11 @@ if (isset($_POST['price'])) {
 
 			<h4><?php echo $book->author; ?></h4>
 
-			<p>You're about to buy this book for <strong><?php echo $book->listPrice; ?></strong>. Proceed?</p>
+			<p>You're about to buy this book for <strong>$<?php echo $book->listPrice; ?></strong>. Proceed?</p>
 
 			<input type="hidden" name="price" value="<?php echo $book->listPrice; ?>" />
 
-			<input type="submit" value="Send money to this dude" />
+			<input type="submit" class="btn" value="Send money to this dude" />
 		</div>
 	</form>
 
