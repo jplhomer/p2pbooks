@@ -719,32 +719,40 @@ img {
   font-size: 30px;
   text-shadow: -1px 0 0 #efefef;
 }
+/* line 150, ../sass/_smallest.scss */
+.cover-layout a.book .sold {
+  padding: 3px;
+  font-size: 12px;
+  text-transform: uppercase;
+  background: red;
+  margin: 3px;
+}
 
 /* Add Book */
-/* line 155, ../sass/_smallest.scss */
+/* line 163, ../sass/_smallest.scss */
 form.form label, form.form input, .add-book label, .add-book input {
   display: block;
 }
-/* line 159, ../sass/_smallest.scss */
+/* line 167, ../sass/_smallest.scss */
 form.form label, .add-book label {
   font-size: 12px;
   text-transform: uppercase;
   color: #cccccc;
   text-align: left;
 }
-/* line 166, ../sass/_smallest.scss */
+/* line 174, ../sass/_smallest.scss */
 form.form input, form.form select, .add-book input, .add-book select {
   padding: 0 10px;
   line-height: 2;
   margin-bottom: 15px;
   width: 100%;
 }
-/* line 173, ../sass/_smallest.scss */
+/* line 181, ../sass/_smallest.scss */
 form.form select, .add-book select {
   line-height: 30px;
   height: 30px;
 }
-/* line 178, ../sass/_smallest.scss */
+/* line 186, ../sass/_smallest.scss */
 form.form .message, .add-book .message {
   color: green;
   text-align: center;
@@ -753,7 +761,7 @@ form.form .message, .add-book .message {
 }
 
 /* FOOTER */
-/* line 188, ../sass/_smallest.scss */
+/* line 196, ../sass/_smallest.scss */
 footer.bottom {
   *zoom: 1;
   text-align: center;
@@ -771,12 +779,12 @@ footer.bottom:before, footer.bottom:after {
 footer.bottom:after {
   clear: both;
 }
-/* line 195, ../sass/_smallest.scss */
+/* line 203, ../sass/_smallest.scss */
 footer.bottom a {
   color: #666666;
 }
 
-/* line 201, ../sass/_smallest.scss */
+/* line 209, ../sass/_smallest.scss */
 .modal-container {
   display: none;
   position: fixed;
@@ -787,7 +795,7 @@ footer.bottom a {
   z-index: 9;
   background: rgba(0, 0, 9, 0.7);
 }
-/* line 211, ../sass/_smallest.scss */
+/* line 219, ../sass/_smallest.scss */
 .modal-container .modal {
   margin: 20px auto;
   padding: 20px;
@@ -798,41 +806,41 @@ footer.bottom a {
   -moz-border-radius: 5px;
   border-radius: 5px;
 }
-/* line 219, ../sass/_smallest.scss */
+/* line 227, ../sass/_smallest.scss */
 .modal-container .modal h2 {
   margin: 0 0 5px;
   font-size: 20px;
 }
-/* line 225, ../sass/_smallest.scss */
+/* line 233, ../sass/_smallest.scss */
 .modal-container .modal .image {
   width: 30%;
   float: left;
   margin-right: 3%;
 }
-/* line 231, ../sass/_smallest.scss */
+/* line 239, ../sass/_smallest.scss */
 .modal-container .modal .info {
   float: left;
   width: 60%;
   margin-right: 3%;
 }
-/* line 237, ../sass/_smallest.scss */
+/* line 245, ../sass/_smallest.scss */
 .modal-container .modal .actions {
   float: left;
   width: 100%;
   margin-top: 10px;
 }
-/* line 242, ../sass/_smallest.scss */
+/* line 250, ../sass/_smallest.scss */
 .modal-container .modal .actions .btn {
   width: 100%;
 }
-/* line 248, ../sass/_smallest.scss */
+/* line 256, ../sass/_smallest.scss */
 .modal-container .close {
   float: right;
   margin: 5px 5px 0 0;
 }
 
 /* BUTTON */
-/* line 257, ../sass/_smallest.scss */
+/* line 265, ../sass/_smallest.scss */
 .btn, a:visited.btn, button {
   display: inline-block;
   text-decoration: none;
@@ -851,12 +859,12 @@ footer.bottom a {
   cursor: pointer;
   border: 0;
 }
-/* line 269, ../sass/_smallest.scss */
+/* line 277, ../sass/_smallest.scss */
 .btn:hover, .btn:focus, a:visited.btn:hover, a:visited.btn:focus, button:hover, button:focus {
   background: #cccccc;
   color: #033063;
 }
-/* line 274, ../sass/_smallest.scss */
+/* line 282, ../sass/_smallest.scss */
 .btn.close, a:visited.btn.close, button.close {
   color: #cccccc;
   text-shadow: 1px 0 0 #efefef;
@@ -875,7 +883,7 @@ footer.bottom a {
   border-radius: 3px;
   line-height: 1;
 }
-/* line 283, ../sass/_smallest.scss */
+/* line 291, ../sass/_smallest.scss */
 .btn.close:hover, .btn.close:focus, a:visited.btn.close:hover, a:visited.btn.close:focus, button.close:hover, button.close:focus {
   background: #dddddd;
 }

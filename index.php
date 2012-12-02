@@ -20,6 +20,10 @@
                 </div>
                 <?php setlocale(LC_MONETARY, 'en_US'); ?>
                 <div class="price"><?php echo money_format('%.2n', $book->listPrice); ?></div>
+                <?php if($book->sold) { ?>
+                <div class="sold">SOLD</div>
+                <?php } ?>
+                
             </div>
         </a>
 
