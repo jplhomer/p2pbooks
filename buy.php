@@ -34,7 +34,7 @@ if (isset($_POST['price'])) {
 
 	<?php $book = lookupBook($bookId, false); ?>
 
-	<form class="add-book" method="post" action="./buy.php">
+	<form class="form" method="post" action="./buy.php">
 
 		<div class="cover">
 			<img src="<?php echo $book->image; ?>" />
