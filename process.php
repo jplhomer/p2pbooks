@@ -1,7 +1,7 @@
 <?php
 
-$endpoint = "http://sleepy-river-2588.herokuapp.com";
-//$endpoint = "http://localhost:2403";
+// Fill with your API's endpoint
+$endpoint = "";
 
 require_once("./auth.php");
 

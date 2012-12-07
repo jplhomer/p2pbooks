@@ -1,19 +1,6 @@
-Happy Medium Bootstrap
+P2PBooks Front End Design
 ======================
 
-We're using this at Happy Medium to get started with client websites. To use it, just clone it into a new local git repo.
+This is the front end built for the P2PBooks app built at [Dwolla's 2012 MacDonald Hackathon](http://oldmacdonaldhackday.com/). *This is very broken -- especially the user auth and Dwolla purchase process. Please don't use it like it is.
 
-Changelog
----------
-
-*Version 0.3*
-
-Added "width: auto" to responsive images, took away the unused min-width style. Added a bunch of meta tags.
-
-*Version 0.2*
-
-Fixed viewport issue.
-
-*Version 0.1*
-
-Initial commit. Included SASS-based stylesheets, basic JS framework, and an images folder.
+Written by [Josh Larson](http://jplhomer.org) / [@jplhomer](http://twitter.com/jplhomer).

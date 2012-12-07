@@ -8,7 +8,7 @@ require './lib/dwolla.php';
 require '_keys.php';
 
 // OAuth parameters
-$redirectUri = 'http://p2pbooks.herokuapp.com/activate-dwolla.php'; // Point back to this file/URL
+$redirectUri = ''; // Point back to this file/URL
 //$permissions = array("Send", "Transactions", "Balance", "Request", "Contacts", "AccountInfoFull", "Funding");
 $permissions = array("Send");
 
